@@ -111,6 +111,9 @@
         let isValidationDone = false;
         let isRunning = false; // Contrôle l'exécution de la boucle
     
+        // Charger le son de validation
+        const validationSound = new Audio('assets/check-sound.mp3');
+    
         // Fonction pour arrêter la webcam
         function stopWebcam() {
             if (webcam) {
@@ -223,6 +226,9 @@
                         stopWebcam(); // Arrêter la webcam et la boucle
                         freezeWebcamImage(); // Figer l'image
                         isValidationDone = true;
+    
+                        // Jouer le son de validation
+                        validationSound.play();
                     }, 5000); // 5 secondes
                 }
             } else {
